@@ -1,0 +1,165 @@
+---
+layout: default
+---
+
+
+
+<div class="home">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-5 col-sm-6 col-xs-9">
+            <img id="ap-img" src="/assets/img/adamperer.png" class="img-responsive" style="margin-bottom: 10px;">
+          </div> <!-- /col-md-4 -->
+          <div class="col-md-7 col-sm-6 col-xs-12 overview">
+            <p>
+              I characterize my research as 
+              <span class="overview-lead"> Human-Centered Data Science </span> where I combine techniques from statistics, machine learning, and interactive data visualization 
+              to empower data scientists throughout their analytical workflow. <p>My current research focuses around several themes:  </p>
+              <span class=list">
+                1. Designing tools for <span class="overview-highlight">Interactive and Visual Data Science</span><br>
+                2. Providing insights with <span class="overview-highlight">Interpretable Machine Learning</span><br>
+                3. Innovating data science techniques for <span class="overview-highlight">Data-Driven Healthcare</span>
+              </span>
+            </div> <!-- /col-md-8 -->
+          </div> <!-- row -->
+          <div class="bio">
+            <p>
+            Starting in September 2018, Adam Perer is an Assistant Research Professor at Carnegie Mellon University, where he is a member of the Human-Computer Interaction Institute.  His research integrates data visualization and machine learning techniques to create visual interactive systems to help users make sense out of big data.  Lately, his research focuses on human-centered data science and extracting insights from clinical data to support data-driven medicine.  This work has been published at premier venues in visualization, human-computer interaction, and medical informatics.  He was previously a Research Scientist at IBM Research.  He holds a Ph.D. in Computer Science from the University of Maryland, College Park. </p>
+          </div>
+
+
+          {%- if site.highlights.size > 0 -%}
+          <div class="row">
+            <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Recent Highlights" }}</p></div>
+          </div>
+
+          {%- for highlight in site.highlights reversed -%}
+          <div class="media">
+            <div class="media-left media-top">
+              <a href="{{highlight.pointer}}">
+                <img class="media-object img-responsive img-thumbnail" src="{{highlight.teaser}}" alt="{{highlight.title}}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{highlight.title}}</h4>
+              <!--  <span class="label label-primary">PAPER</span> -->
+              <small>
+                {{highlight.content}}
+              </small>
+            </div>
+          </div>
+          {%- endfor -%}
+
+          {%- endif -%}
+
+
+          {%- if site.projects.size > 0 -%}
+          <div class="row">
+            <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Selected Papers" }}</p></div>
+          </div>
+
+          {%- for project in site.projects reversed -%}
+
+          {%- if project.frontpage -%}
+
+          <div class="media">
+            <div class="media-left media-top">
+              <a href="{{project.pointer}}">
+                <img class="media-object img-responsive img-thumbnail" src="{{project.teaser}}" alt="{{project.title}}">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{project.title}}</h4>
+              <!--  <span class="label label-primary">PAPER</span> -->
+              <small>
+                {{project.content}}
+              </small>
+            </div>
+          </div>
+
+          {%- endif -%}
+
+          {%- endfor -%}
+
+          {%- endif -%}
+
+          <p></p>
+
+          <a class="btn btn-link" style="margin-left" href="papers.html">More Publications...</a>
+
+        </div> <!-- /col-md-9 -->
+
+        <div class="col-md-3">
+          <div class="vital-info" style="margin-top: 0;">
+            <div>Assistant Research Professor</div>
+            <div><a href="http://hcii.cmu.edu">Human-Computer Interaction Institute</a></div>
+            <div><a href="http://cs.cmu.edu/">School of Computer Science</a></div>
+            <div><a href="http://www.cmu.edu/">Carnegie Mellon University</a></div>
+          </div>
+          <div class="vital-info">
+
+          </div>
+
+          <hr>
+
+          <div class="vital-info">
+            <div><a href="mailto:adamperer@cmu.edu">adamperer@cmu.edu</a></div>
+            <!--<div>Twitter: <a href="http://www.twitter.com/adamperer">@adamperer</a></div>-->
+          </div>
+
+          <div class="vital-info">
+            <div>Newell-Simon Hall 2504B</div>
+            <div>5000 Forbes Avenue</div>
+            <div>Pittsburgh PA 15213</div>
+          </div>
+
+          <div class="vital-info">
+            <div>Admin: <a href="mailto:drotondo@andrew.cmu.edu">Diana Rotondo</a></div>
+            <div>412-268-7099</div>
+          </div>
+          <div class="vital-info">
+            <div><a href='papers/adamPerer-CV-Aug2018.pdf'>Curriculum vitae</a></div>
+          </div>
+
+          <hr>
+
+          <div id="classes" class="vital-info">
+            <h5>Teaching</h5>
+            <div class="row">
+              <div class="col-md-4">Fall 2018</div>
+              <div class="col-md-8"><a href="http://www.hcii.cmu.edu">Interactive Data Science</a></div>
+            </div>
+<!--                <div class="row">
+                  <div class="col-md-3">&nbsp;</div>
+                  <div class="col-md-9"><a href="http://www.hcii.cmu.edu">Interactive Data Science</a></div>
+                </div> -->
+                <div class="vital-info">
+                 <div>Office hours: TBD</div>
+               </div>
+
+             </div>
+
+             <hr>
+
+             <div id="talks" class="vital-info">
+              <h5>Talks and travel</h5>
+              <div class="talk">
+                <div class="row ">
+                  <div class="date col-md-4">Oct 07</div>
+                  <div class="col-md-8"><a href="https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=18411">Dagstuhl</a></div>
+                </div>
+                <div class="row ">
+                  <div class="date col-md-4">Oct 21</div>
+                  <div class="col-md-8"><a href="http://ieeevis.org">IEEE VIS</a></div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- /col-md-3 -->
+        </div> <!-- /row -->
+
+      </div> <!-- /container -->
+
+    </div> <!-- /home -->
