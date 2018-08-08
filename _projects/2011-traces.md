@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Diversity among Enterprise Online Communities: Collaborating, Teaming, and Innovating through Social Media"
+title:  "Digital Traces of Interest: Deriving Interest Relationships from Social Media Interactions"
 date:   2011-04-21 12:14:25 -0400
 categories: papers
 paper: true
