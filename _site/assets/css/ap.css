@@ -137,8 +137,14 @@ p.lead {
   background-color: #b00;
 }
 
+
+.media-object.img-responsive {
+  min-width: 150px;
+}
+
 .media-object.img-thumbnail {
   max-width: 150px;
+  max-height: 100px;
 }
 
 
@@ -218,4 +224,36 @@ h5.title {
   margin-right: 4px;
   object-fit: cover;
   filter: grayscale(70%);
+}
+
+.pl0 {
+  padding-left: 0;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.db {
+  display: block;
+}
+
+.f6 {
+  font-size: 1.2rem;
+}
+
+.preview-image {
+  width: 150px; 
+  /* 10rem; */
+  height: 7rem;
+  background-size: cover;
+  background-position: top left;
+  transition: background 1.5s;
+  margin-bottom: 0;
+  margin-right: 1rem;
+  display: block;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }

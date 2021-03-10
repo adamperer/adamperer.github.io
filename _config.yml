@@ -25,7 +25,8 @@ bio: >-
 
 collections:
   - highlights
-  - projects
+  - publications
+  - courses
 
 google_analytics: "UA-175193-7"
 
@@ -34,7 +35,10 @@ google_analytics: "UA-175193-7"
 markdown: kramdown
 theme: minima
 plugins:
+  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-mentions
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

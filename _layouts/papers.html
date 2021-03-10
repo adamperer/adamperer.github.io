@@ -10,29 +10,47 @@ layout: default
     <div class="row">
       <div class="col-md-9">
         
-          {%- if site.projects.size > 0 -%}
-          <div class="row">
-            <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Selected Papers" }}</p></div>
-          </div>
+        {%- if site.publications.size > 0 -%}
+        <div class="row">
+          <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Recent Publications" }}</p></div>
+        </div>
 
-          {%- for project in site.projects reversed -%}
-          <div class="media">
-            <div class="media-left media-top">
-              <a href="{{project.pointer}}">
-                <img class="media-object img-responsive img-thumbnail" src="{{project.teaser}}" alt="{{project.title}}">
-              </a>
-            </div>
-            <div class="media-body">
-              <h4 class="media-heading">{{project.title}}</h4>
-              <!--  <span class="label label-primary">PAPER</span> -->
-              <small>
-                {{project.content}}
-              </small>
+        {% assign adam_pubs = site.publications | where: "authors", "Adam Perer" %}
+        {% assign recent_pubs = adam_pubs | reverse %} {% for pub in
+          recent_pubs %}
+        <div class="media">
+          <div class="media-left media-top">
+            <a href="https://dig.cmu.edu{{pub.url}}">
+              {% assign thumb = 'assets' | append: pub.url | replace: '.html',
+              '_thumb.png' %}
+              <img class="media-object img-responsive img-thumbnail" src="../{{thumb}}" alt="{{pub.title}}">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><a href="https://dig.cmu.edu{{pub.url}}" class="b link black"
+              >{{pub.title}}</a></h4>
+            <!--  <span class="label label-primary">PAPER</span> -->
+            <!-- <small>
+              {{pub.url}}
+            </small> -->
+            <div class="measure-wide">
+              <div class="mb1">
+                <!-- <a href="{{ pub.pdf }}" class="b link black hover-cmu-red"
+                  ><img src="/assets/img/file-pdf-regular.svg" width="10"></a
+                > -->
+                <span class="fw2">
+                  {% for author in pub.authors %}{% include person name=author %}{%
+                  unless forloop.last %}, {% endunless %}{% endfor %}</span
+                >, <span class="nowrap">{{ pub.venue }} {{ pub.year }}</span>
+                
+              </div>
             </div>
           </div>
-          {%- endfor -%}
+        </div>
+        
+        {% endfor %}
 
-          {%- endif -%}
+        {%- endif -%}
 
 
 

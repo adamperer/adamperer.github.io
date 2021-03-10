@@ -27,11 +27,11 @@ layout: default
           </div> <!-- row -->
           <div class="bio">
             <p>
-            Starting in September 2018, Adam Perer is an Assistant Research Professor at Carnegie Mellon University, where he is a member of the Human-Computer Interaction Institute.  His research integrates data visualization and machine learning techniques to create visual interactive systems to help users make sense out of big data.  Lately, his research focuses on human-centered data science and extracting insights from clinical data to support data-driven medicine.  This work has been published at premier venues in visualization, human-computer interaction, and medical informatics.  He was previously a Research Scientist at IBM Research.  He holds a Ph.D. in Computer Science from the University of Maryland, College Park. </p>
+            Adam Perer is an Assistant Research Professor at Carnegie Mellon University, where he is a member of the Human-Computer Interaction Institute and he co-leads the <a href="https://dig.cmu.edu/">Data Interaction Group</a>.  His research integrates data visualization and machine learning techniques to create visual interactive systems to help users make sense out of big data.  Lately, his research focuses on human-centered data science and extracting insights from clinical data to support data-driven medicine.  This work has been published at premier venues in visualization, human-computer interaction, and medical informatics.  He was previously a Research Scientist at IBM Research.  He holds a Ph.D. in Computer Science from the University of Maryland, College Park. </p>
           </div>
 
 
-          {%- if site.highlights.size > 0 -%}
+          {%- if site.highlights.size > 10 -%}
           <div class="row">
             <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Recent Highlights" }}</p></div>
           </div>
@@ -55,40 +55,49 @@ layout: default
 
           {%- endif -%}
 
-
-          {%- if site.projects.size > 0 -%}
+          {%- if site.publications.size > 0 -%}
           <div class="row">
-            <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Selected Papers" }}</p></div>
+            <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Selected Publications" }}</p></div>
           </div>
 
-          {%- for project in site.projects reversed -%}
-
-          {%- if project.frontpage -%}
-
+          {% assign adam_pubs = site.publications | where: "authors", "Adam Perer" %}
+          {% assign recent_pubs = adam_pubs | reverse %} {% for pub in
+            recent_pubs %}
           <div class="media">
             <div class="media-left media-top">
-              <a href="{{project.pointer}}">
-                <img class="media-object img-responsive img-thumbnail" src="{{project.teaser}}" alt="{{project.title}}">
+              <a href="https://dig.cmu.edu{{pub.url}}">
+                {% assign thumb = 'assets' | append: pub.url | replace: '.html',
+                '_thumb.png' %}
+                <img class="media-object img-responsive img-thumbnail" src="{{thumb}}" alt="{{pub.title}}">
               </a>
             </div>
             <div class="media-body">
-              <h4 class="media-heading">{{project.title}}</h4>
+              <h4 class="media-heading"><a href="https://dig.cmu.edu{{pub.url}}" class="b link black"
+                >{{pub.title}}</a></h4>
               <!--  <span class="label label-primary">PAPER</span> -->
-              <small>
-                {{project.content}}
-              </small>
+              <!-- <small>
+                {{pub.url}}
+              </small> -->
+              <div class="measure-wide">
+                <div class="mb1">
+                  <!-- <a href="{{ pub.pdf }}" class="b link black hover-cmu-red"
+                    ><img src="/assets/img/file-pdf-regular.svg" width="10"></a
+                  > -->
+                  <span class="fw2">
+                    {% for author in pub.authors %}{% include person name=author %}{%
+                    unless forloop.last %}, {% endunless %}{% endfor %}</span
+                  >, <span class="nowrap">{{ pub.venue }} {{ pub.year }}</span>
+                  
+                </div>
+              </div>
             </div>
           </div>
-
-          {%- endif -%}
-
-          {%- endfor -%}
+          
+          {% endfor %}
 
           {%- endif -%}
 
           <p></p>
-
-          <a class="btn btn-link" style="margin-left" href="papers.html">More Publications...</a>
 
         </div> <!-- /col-md-9 -->
 
@@ -121,17 +130,32 @@ layout: default
             <div>412-268-7099</div>
           </div>
           <div class="vital-info">
-            <div><a href='papers/adamPerer-CV-Aug2018.pdf'>Curriculum vitae</a></div>
+            <div><a href='papers/adamPerer-CV-public.pdf'>Curriculum vitae</a></div>
           </div>
 
           <hr>
 
           <div id="classes" class="vital-info">
             <h5>Teaching</h5>
-            <div class="row">
-              <div class="col-md-4">Fall 2018</div>
-              <div class="col-md-8"><a href="http://www.hcii.cmu.edu">Interactive Data Science</a></div>
-            </div>
+
+            <ul class="list pl0">
+              {% assign adam_courses = site.courses | where: "instructors", "Adam Perer" %}
+              {% assign years = adam_courses | group_by: 'year' %}{% assign
+              sorted_years = years | reverse %}{% for year in sorted_years %} {%
+              assign sorted_courses = year.items | sort: 'semester' %} {% for course
+              in sorted_courses %}
+              <li class="pb3">
+                <a href="{{ course.url }}">{{ course.name }}</a>
+                <span class="db f6 black-80"
+                  >{{ course.semester }} {{ course.year }}</span
+                >
+              </li>
+              {% endfor %} {% endfor %}
+            </ul>
+           
+
+
+           
 <!--                <div class="row">
                   <div class="col-md-3">&nbsp;</div>
                   <div class="col-md-9"><a href="http://www.hcii.cmu.edu">Interactive Data Science</a></div>
@@ -144,7 +168,7 @@ layout: default
 
              <hr>
 
-             <div id="talks" class="vital-info">
+             <!-- <div id="talks" class="vital-info">
               <h5>Talks and travel</h5>
               <div class="talk">
                 <div class="row ">
@@ -156,7 +180,7 @@ layout: default
                   <div class="col-md-8"><a href="http://ieeevis.org">IEEE VIS</a></div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div> <!-- /col-md-3 -->
         </div> <!-- /row -->
 
