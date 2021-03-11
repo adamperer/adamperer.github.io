@@ -145,7 +145,7 @@ layout: default
               assign sorted_courses = year.items | sort: 'semester' %} {% for course
               in sorted_courses %}
               <li class="pb3">
-                <a href="{{ course.url }}">{{ course.name }}</a>
+                <a href="https://dig.cmu.edu{{ course.url }}">{{ course.name }}</a>
                 <span class="db f6 black-80"
                   >{{ course.semester }} {{ course.year }}</span
                 >
