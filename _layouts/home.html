@@ -2,8 +2,6 @@
 layout: default
 ---
 
-
-
 <div class="home">
 
   <div class="container">
@@ -74,18 +72,10 @@ layout: default
             <div class="media-body">
               <h4 class="media-heading"><a href="https://dig.cmu.edu{{pub.url}}" class="b link black"
                 >{{pub.title}}</a></h4>
-              <!--  <span class="label label-primary">PAPER</span> -->
-              <!-- <small>
-                {{pub.url}}
-              </small> -->
               <div class="measure-wide">
                 <div class="mb1">
-                  <!-- <a href="{{ pub.pdf }}" class="b link black hover-cmu-red"
-                    ><img src="/assets/img/file-pdf-regular.svg" width="10"></a
-                  > -->
                   <span class="fw2">
-                    {% for author in pub.authors %}{% include person name=author %}{%
-                    unless forloop.last %}, {% endunless %}{% endfor %}</span
+                    {% for author in pub.authors %}{% include person name=author %}{% unless forloop.last %},{% endunless %}{% endfor %}</span
                   >, <span class="nowrap">{{ pub.venue }} {{ pub.year }}</span>
                   
                 </div>
@@ -152,14 +142,6 @@ layout: default
               </li>
               {% endfor %} {% endfor %}
             </ul>
-           
-
-
-           
-<!--                <div class="row">
-                  <div class="col-md-3">&nbsp;</div>
-                  <div class="col-md-9"><a href="http://www.hcii.cmu.edu">Interactive Data Science</a></div>
-                </div> -->
                 <div class="vital-info">
                  <div>Office hours: TBD</div>
                </div>
@@ -167,6 +149,31 @@ layout: default
              </div>
 
              <hr>
+
+             <div id="classes" class="vital-info">
+              <h5>Advising</h5>
+              <br>
+              <ul class="list pl0">
+                {% assign adam_students = site.people | where: "advisors", "Adam Perer" %}
+                
+                {% for role in page.roles %}
+                <span>{{role}}s</span>
+                {% for person in adam_students %}
+                {% if person.role == role %}
+                {% unless person.alumni_since %}
+                <li class="pb3">
+                  <a href="{{person.website}}">{{ person.name }}</a>
+                  <!-- <span class="db f6 black-80"
+                    >{{ person.role }}</span
+                  > -->
+                </li>
+                {% endunless %}
+                {% endif %}
+                {% endfor %}
+                <br>
+                {% endfor %}
+              </ul>
+               <hr>
 
              <!-- <div id="talks" class="vital-info">
               <h5>Talks and travel</h5>
