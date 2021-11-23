@@ -5,7 +5,7 @@
 layout: home
 roles:
   - PhD Student
-  - Visiting PhD Student
+#  - Visiting PhD Student
   - Masters Student
   - Undergraduate Student
 ---

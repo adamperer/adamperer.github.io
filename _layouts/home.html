@@ -21,6 +21,7 @@ layout: default
                 2. Providing insights with <span class="overview-highlight">Interpretable Machine Learning</span><br>
                 3. Innovating data science techniques for <span class="overview-highlight">Data-Driven Healthcare</span>
               </span>
+              <p></p><p> I co-lead the <a href="https://dig.cmu.edu/">Data Interaction Group</a>, whose mission is to empower everyone to analyze and communicate data with interactive systems. </p></span>
             </div> <!-- /col-md-8 -->
           </div> <!-- row -->
           <div class="bio">
@@ -53,13 +54,15 @@ layout: default
 
           {%- endif -%}
 
+
           {%- if site.publications.size > 0 -%}
           <div class="row">
-            <div class="col-md-12"><p class="lead">{{ page.list_title | default: "Selected Publications" }}</p></div>
+            <div class="col-md-12"><p><span class="lead">{{ page.list_title | default: "Selected Publications" }}</span> (<a href="https://dig.cmu.edu/publications#authors=Adam%20Perer">View all publications</a>)</p></div>
           </div>
 
           {% assign adam_pubs = site.publications | where: "authors", "Adam Perer" %}
-          {% assign recent_pubs = adam_pubs | reverse %} {% for pub in
+          {% assign adam_highlight_pubs = adam_pubs | where: "highlight", "true" %}
+          {% assign recent_pubs = adam_highlight_pubs | reverse %} {% for pub in
             recent_pubs %}
           <div class="media">
             <div class="media-left media-top">
@@ -76,7 +79,8 @@ layout: default
                 <div class="mb1">
                   <span class="fw2">
                     {% for author in pub.authors %}{% include person name=author %}{% unless forloop.last %},{% endunless %}{% endfor %}</span
-                  >, <span class="nowrap">{{ pub.venue }} {{ pub.year }}</span>
+                  >
+                  <br><span class="nowrap db black-80">{{ pub.venue }} {{ pub.year }}</span>
                   
                 </div>
               </div>
@@ -87,13 +91,14 @@ layout: default
 
           {%- endif -%}
 
-          <p></p>
+          <p><p>(<a href="https://dig.cmu.edu/publications#authors=Adam%20Perer">View all publications</a>)</p></p>
 
         </div> <!-- /col-md-9 -->
 
         <div class="col-md-3">
           <div class="vital-info" style="margin-top: 0;">
             <div>Assistant Research Professor</div>
+            <div>Co-lead, <a href="https://dig.cmu.edu/">Data Interaction Group</a></div>
             <div><a href="http://hcii.cmu.edu">Human-Computer Interaction Institute</a></div>
             <div><a href="http://cs.cmu.edu/">School of Computer Science</a></div>
             <div><a href="http://www.cmu.edu/">Carnegie Mellon University</a></div>
@@ -150,7 +155,7 @@ layout: default
 
              <hr>
 
-             <div id="classes" class="vital-info">
+             <div id="advising" class="vital-info">
               <h5>Advising</h5>
               <br>
               <ul class="list pl0">

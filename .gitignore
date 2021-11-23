@@ -6,3 +6,4 @@ _projects/*.md
 Gemfile
 Gemfile.lock
 Gemfile
+_site/*
