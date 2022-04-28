@@ -1,0 +1,1923 @@
+<p>Submit assignments and discussions on <a href="https://canvas.cmu.edu/courses/24179">Canvas</a>.</p>
+
+<p>This course is an introduction to key design principles and techniques for interactively visualizing data. The major goals of this course are to understand how visual representations can help in the analysis and understanding of complex data, how to design effective visualizations, and how to create your own interactive visualizations using modern web-based frameworks.</p>
+
+<p>After you successfully complete the course you will be able to:</p>
+
+<ul>
+  <li>Understand the value of visualization</li>
+  <li>Critically evaluate visualizations and suggest improvements and refinements</li>
+  <li>Use best practices from design to create effective visualizations</li>
+  <li>Use principles of human perception and cognition in visualization design</li>
+  <li>Learn how to use visualization as a communication tool</li>
+  <li>Conduct exploratory data analysis and transform data</li>
+  <li>Create web-based interactive visualizations using frameworks such as <a href="https://vega.github.io/vega-lite/">Vega-Lite</a> and <a href="https://d3js.org">D3</a></li>
+  <li>Be prepared to do research in visualization</li>
+</ul>
+
+<h2 class="no_toc" id="jump-to">Jump to</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#schedule-and-readings" id="markdown-toc-schedule-and-readings">Schedule and Readings</a></li>
+  <li><a href="#details" id="markdown-toc-details">Details</a></li>
+  <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a>    <ul>
+      <li><a href="#projects" id="markdown-toc-projects">Projects</a></li>
+      <li><a href="#work-required" id="markdown-toc-work-required">Work Required</a></li>
+      <li><a href="#readings" id="markdown-toc-readings">Readings</a></li>
+      <li><a href="#grades" id="markdown-toc-grades">Grades</a></li>
+    </ul>
+  </li>
+  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+  <li><a href="#policies" id="markdown-toc-policies">Policies</a>    <ul>
+      <li><a href="#respect-for-diversity" id="markdown-toc-respect-for-diversity">Respect for Diversity</a></li>
+      <li><a href="#accommodations-for-students-with-disabilities" id="markdown-toc-accommodations-for-students-with-disabilities">Accommodations for Students with Disabilities</a></li>
+      <li><a href="#health-and-well-being" id="markdown-toc-health-and-well-being">Health and Well-being</a></li>
+      <li><a href="#food-insecurity" id="markdown-toc-food-insecurity">Food Insecurity</a></li>
+    </ul>
+  </li>
+  <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a></li>
+</ul>
+
+<h2 id="schedule-and-readings">Schedule and Readings</h2>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Aug 31</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Introduction and the Value of Visualization
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/345118" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/10-2wX14UA2BKimjCxtLYceX1O2jDzHUZ"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/introduction-to-vega-lite">Introduction to Vega-Lite</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1-SrBG2PonDK4kPxIr6qaY1quYeyozZ0c">Information Visualization (Chapter 1)</a>
+      
+
+      
+        by Stuart Card, Jock Mackinlay, and Ben Shneiderman
+      
+      
+      
+        <i>1999</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1-SU83DmAqUdflBjCbmaE00bsDn7evJJE">The Value of Visualization</a>
+      
+
+      
+        by Jarke van Wijk
+      
+      
+      
+        <i>2005</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Sep 02</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Sketching
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346257" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/10W5WXa831GUx4Y5amRQws0HOpkEgjan7"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/data-types-graphical-marks-and-visual-encoding-channels">Data Types, Graphical Marks, and Visual Encoding Channels</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1-1Xlvni3_NFoSiNs8JDuDQV8bFLDuJcj">The Anatomy of Sketching (Chapter 9)</a>
+      
+
+      
+        by Bill Buxton
+      
+      
+        in <i>Sketching User Experiences</i>
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1--4iqyEJNSly0arOTpdE9ppotdHSTz9W">Sketching with Data Opens the Mind's Eye</a>
+      
+
+      
+        by Giorgia Lupi
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-film" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://vimeo.com/109954123">The Shape of My Thoughts</a>
+      
+
+      
+        by Giorgia Lupi
+      
+      
+        in <i>Eyeo 2014</i>
+      
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Sep 07</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Data and Image Models
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346258" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/10hOjYxml_TAXhX1nyZWWmF80lfitCofa"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://docs.google.com/document/d/146odOXGMrAxR5Eovw3o2Z0NzfLOAD6yxyLGcBcypUlM/edit?usp=sharing">Assignment 1:  Sketching Data</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/scales-axes-and-legends">Scales, Axes, and Legends</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/13NseKgMXbwXVqIqxAuZ16xmWJ-8JRA1M/view?usp=sharing">The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations</a>
+      
+
+      
+        by Ben Shneiderman
+      
+      
+        in <i>IEEE Symposium on Visual Languages</i>
+      
+      
+        <i>1996</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://queue.acm.org/detail.cfm?id=1805128">A Tour through the Visualization Zoo</a>
+      
+
+      
+        by Jeffrey Heer, Michael Bostock, and Vadim Ogievetsky
+      
+      
+        in <i>ACM Queue</i>
+      
+      
+        <i>2010</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Sep 09</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Effective Visual Encodings
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346261" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/10iSaRizlqmh_IEzfePuhxwY6WJ2VM8yc"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://canvas.cmu.edu/courses/24179/assignments/407761">Assignment 0: Setup Github</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/data-transformation">Data Transformation</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/open?id=171tAFZLofETfiOm4OElpHcWSlWQ8Yven">Basic Principles of Visualization (Chapter 5)</a>
+      
+
+      
+        by Alberto Cairo
+      
+      
+        in <i>The Truthful Art</i>
+      
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Sep 14</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Exploratory Data Analysis
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346266" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/1dvuVpPL7KQ-vGduezO8Clcdf45X9NFJv"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/multi-view-composition">Multi-View Composition</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1-SqSkvMhLHCkUrMGd-we3BAFtG2Xe3YF">Data analysis and statistics: An expository overview</a>
+      
+
+      
+        by Tukey, Wilk
+      
+      
+      
+        <i>1966</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1-dDFEcSHeM-1nlsNskZ1Ni_-GUhuKoTC">Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations</a>
+      
+
+      
+        by Kanit Wongsuphasawat, Dominik Moritz, Anushka Anand, Jock Mackinlay, Bill Howe, and Jeffrey Heer
+      
+      
+        in <i>IEEE Transactions on Visualization and Computer Graphics</i>
+      
+      
+        <i>2016</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1ZMwEHi6d-54OAMfBZkEcF6ttUvr85IQV/view?usp=sharing">Polaris: A System for Query, Analysis and Visualization of Multi-dimensional Relational Databases</a>
+      
+
+      
+        by Chris Stolte, Diane Tang, and Pat Hanrahan
+      
+      
+        in <i>IEEE TVCG</i>
+      
+      
+        <i>2002</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Sep 16</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Transform Data with SQL
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346267" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/1fEDv5RbuJyIbuIAuuuW023Bv0XNPGEiD"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@cmudig/introducing-sql-with-duckdb">Introduction to SQL</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1AlYklRsLKEOC_3_Y1ssbLoDyTqM6CvFo">A Relational Model of Data for Large Shared Data Banks</a>
+      
+
+      
+        by Edgar F. Codd
+      
+      
+      
+        <i>1970</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Sep 21</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Interactivity
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346268" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/1zve8rCxEcBL2tauVp3P7Wi5rgkYHtY2N"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://queue.acm.org/detail.cfm?id=2146416">Interactive Dynamics for Visual Analysis</a>
+      
+
+      
+        by Jeffrey Heer and Ben Shneiderman
+      
+      
+        in <i>ACM Queue</i>
+      
+      
+        <i>2012</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/interaction">Interaction</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+
+      
+        <a href="https://medium.com/@dominikus/the-end-of-interactive-visualizations-52c585dcafcb">The death of interactive infographics?</a>
+      
+
+      
+        by Dominikus Baur
+      
+      
+      
+        <i>2017</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+
+      
+        <a href="https://www.vis4.net/blog/2017/03/in-defense-of-interactive-graphics/">In Defense of Interactive Graphics</a>
+      
+
+      
+        by Gregor Aisch
+      
+      
+      
+        <i>2017</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Sep 23</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Visualization Tools
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346271" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/16-LUSpwXgTYJS_bMhdiy3qu1LH-OfqjL"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/a-minimal-introduction-to-javascript-and-observable">A Minimal Introduction to JavaScript and Observable.</a>
+      
+
+      
+      
+      
+      
+        <br />
+        <small class="dark-gray">Read this first if you are new to JavaScript and/or Observable notebooks!</small>
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/introduction-to-d3-part-1">Introduction to D3, Part 1</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1FH5OzFAF0TMtMM4I7cIrHCS0aDq3VR6p/view?usp=sharing">D3: Data-Driven Documents</a>
+      
+
+      
+        by Michael Bostock, Vadim Ogievetsky, Jeffrey Heer
+      
+      
+        in <i>IEEE Trans. Visualization &amp; Comp. Graphics (Proc. InfoVis)</i>
+      
+      
+        <i>2011</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-film" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://www.youtube.com/watch?v=9uaHRWj04D4"> Vega-Lite: A Grammar of Interactive Graphics</a>
+      
+
+      
+        by Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer
+      
+      
+        in <i>OpenVis Conf</i>
+      
+      
+        <i>2017</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1dYDgsR_XqZQ8CLZUHwmQ4Jue-3GMz8Mr/view?usp=sharing">Vega-Lite: A Grammar of Interactive Graphics</a>
+      
+
+      
+        by Arvind Satyanarayan, Dominik Moritz, Kanit Wongsuphasawat, and Jeffrey Heer
+      
+      
+        in <i>IEEE Trans. Visualization &amp; Comp. Graphics (Proc. InfoVis)</i>
+      
+      
+        <i>2017</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Sep 28</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      D3 Deep Dive
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346272" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/1jNoZoP0JV94Agc97yANifrT4gE4u1qfL"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://canvas.cmu.edu/courses/24179/assignments/409982">Assignment 2: Exploratory Data Analysis</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/introduction-to-d3-part-2">Introduction to D3, Part 2</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Sep 30</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Final Project Introduction
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346273" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/1-2RAMU62jy82UdpwavNRV3t6MNwx_S9d"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Oct 05</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Narrative Visualization
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346274" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/13bV7srf1LxWOfOVw_ycd7707CTSL4UMW"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1eNlLqJf7Gxphwa7ct4MbendVyoAkpPs8/view?usp=sharing">Narrative Visualization: Telling Stories with Data</a>
+      
+
+      
+        by Edward Segel, Jeffrey Heer
+      
+      
+        in <i>IEEE Trans. Visualization &amp; Comp. Graphics (Proc. InfoVis)</i>
+      
+      
+        <i>2010</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Oct 07</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Designing for Perception
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346276" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/19qi_QaAFPEvZD60-si-wDDpBvB-MRS80"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/file/d/1--k-IiRxcYJWADUo9EvthaG8pgTzxwaz/view?usp=sharing">Layering and Seperation (Chapter 3)</a>
+      
+
+      
+        by Edward Tufte
+      
+      
+        in <i>Envisioning Information</i>
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-globe" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://blog.datawrapper.de/colors/">What to consider when choosing colors for data visualization</a>
+      
+
+      
+        by Lisa Charlotte Muth
+      
+      
+      
+        <i>2018</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Oct 12</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Ethics in Visualization
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346277" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/open?id=1-MtB7C2lG6sdULgShQkQcnQZBngAe1S6&amp;authuser=aperer1%40andrew.cmu.edu&amp;usp=drive_fs">Ethical Dimensions of Visualization Research</a>
+      
+
+      
+        by Michael Correll
+      
+      
+        in <i>CHI '19: Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems</i>
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/open?id=1-8SYdSKFBGyn0kLy4N_yjhLsOnx-zPpZ&amp;authuser=aperer1%40andrew.cmu.edu&amp;usp=drive_fs">Introduction</a>
+      
+
+      
+        by Catherine D'Ignazio and Lauren F. Klein
+      
+      
+        in <i>Data Feminism</i>
+      
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Oct 19</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Ethical Data Visualization I
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346278" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://canvas.cmu.edu/courses/24179/assignments/413333">Assignment 3: Interactive Visualization</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Oct 21</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Ethical Data Visualization II
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346280" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://canvas.cmu.edu/courses/24179/assignments/413344">Final Project Proposal</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Oct 26</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Virtual VIS Week I
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346282" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Oct 28</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Virtual VIS Week II
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346283" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Nov 02</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Geographic Visualization
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346285" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/12aHnqhDc82ekgW9zaQzJziEpRz0yX5cf"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://canvas.cmu.edu/courses/24179/assignments/412266">Notes from Virtual VIS Week</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="fas fa-laptop-code" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://observablehq.com/@uwdata/cartographic-visualization">Cartographic Visualization</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-globe" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://blog.datawrapper.de/choroplethmaps/">What to consider when creating choropleth maps</a>
+      
+
+      
+        by Lisa Charlotte Muth
+      
+      
+      
+        <i>2018</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Nov 04</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Network Visualization
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346286" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/12ag3gxkpxAZr-8LfFfMTCzv2CAz9vB7q"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://canvas.cmu.edu/courses/24179/assignments/413345">Final Project Design Review</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://drive.google.com/open?id=10CLJs0yw-r4KF7oaMWPOdNcNjnUTXR8Z&amp;authuser=aperer1%40andrew.cmu.edu&amp;usp=drive_fs">Chapter 2: Networks</a>
+      
+
+      
+        by Isabel Meirelles
+      
+      
+        in <i>Design for Information</i>
+      
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Nov 09</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Scalable Visualization
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346288" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/12dplQJ2q_-brixAvSO0ZM8gghH1m5ZPm"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://idl.cs.washington.edu/files/2013-imMens-EuroVis.pdf">imMens: Real-time Visual Querying of Big Data</a>
+      
+
+      
+        by Zhicheng Liu, Biye Jiang, Jeffrey Heer
+      
+      
+        in <i>EuroVis</i>
+      
+      
+        <i>2013</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://vita.had.co.nz/papers/bigvis.pdf">Bin-summarise-smooth: A framework for visualising large data</a>
+      
+
+      
+        by Hadley Wickham
+      
+      
+      
+        <i>2013</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://www.domoritz.de/papers/2019-Falcon-CHI.pdf">Falcon: Balancing Interactive Latency and Resolution Sensitivity for Scalable Linked Visualizations</a>
+      
+
+      
+        by Dominik Moritz, Bill Howe, Jeffrey Heer
+      
+      
+        in <i>ACM CHI</i>
+      
+      
+        <i>2019</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Nov 11</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Accessibility
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346289" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/12e8ZeFqQoqR-rHbj44n9m7BW-IYcv521"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://arxiv.org/pdf/1909.05118.pdf">Sociotechnical Considerations for Accessible Visualization Design</a>
+      
+
+      
+        by Alan Lundgard, Crystal Lee, Arvind Satyanarayan
+      
+      
+        in <i>IEEE VIS</i>
+      
+      
+        <i>2019</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-film" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://pwd.org.au/resources/disability-info/social-model-of-disability/">Social Model Of Disability</a>
+      
+
+      
+      
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-film" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://youtu.be/SWB-KLXN-Ok?t=1206">Are Your Data Visualizations Excluding People?</a>
+      
+
+      
+        by Frank Elavsky, Larene Le Gassick, Sarah Fossheim
+      
+      
+      
+        <i>2021</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Nov 16</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Animation
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346291" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/12f3mrAtruVQpjk4F8P00U9u0fqcsEe_e"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Nov 18</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Visualization and Machine Learning
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346295" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-globe" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://parametric.press/issue-01/the-myth-of-the-impartial-machine/">The Myth of the Impartial Machine</a>
+      
+
+      
+        by Alice Feng, Shuyan Wu
+      
+      
+      
+        <i>2019</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-globe" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://dimensionality-reduction-293e465c2a3443e8941b016d.vercel.app/">The Beginner's Guide to Dimensionality Reduction</a>
+      
+
+      
+        by Matthew Conlen, Fred Hohman
+      
+      
+      
+        <i>2018</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://fredhohman.com/papers/19-gamut-chi.pdf">Gamut: A Design Probe to Understand How Data Scientists Understand Machine Learning Models</a>
+      
+
+      
+        by Fred Hohman, Andrew Head, Rich Caruana, Robert DeLine, Steven Drucker
+      
+      
+        in <i>ACM CHI</i>
+      
+      
+        <i>2019</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Nov 23</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Uncertainty
+      </span>
+
+      
+        <a class="fr" href="https://canvas.cmu.edu/courses/24179/discussion_topics/346292" title="Discussion"><i class="fas fa-comments"></i></a>
+      
+
+      
+        <a class="fr mr2" href="https://drive.google.com/file/d/14ObHUucfe08E1q1RWsVJw1niiO3yBeAm"><i class="fas fa-window-maximize" aria-hidden="true"></i> Slides</a>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+      <li class="mt1">
+      
+        <small class="br2 white bg-gray ph1 mr1">Required</small>
+      
+
+      
+        <i class="far fa-globe" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://medium.com/multiple-views-visualization-research-explained/the-curious-absence-of-uncertainty-from-many-most-visualizations-f0c7f89e8d84">The Curious Absence of Uncertainty from Many (Most?) Visualizations</a>
+      
+
+      
+        by Jessica Hullman
+      
+      
+      
+        <i>2019</i>
+      
+      
+      </li>
+    
+      <li class="mt1">
+      
+        <small class="br2 ba b--gray ph1 mr1">Optional</small>
+      
+
+      
+        <i class="far fa-file-pdf" aria-hidden="true"></i>
+      
+
+      
+        <a href="https://www.pnas.org/content/pnas/117/14/7672.full.pdf">The effects of communicating uncertainty on public trust in facts and numbers</a>
+      
+
+      
+        by Anne Marthe van der Bles, Sander van der Linden, Alexandra L. J. Freeman, and David J. Spiegelhalter
+      
+      
+      
+        <i>2020</i>
+      
+      
+      </li>
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Tue, Nov 30</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      No Class
+      </span>
+
+      
+        <span class="fr"><i class="fas fa-comments" aria-hidden="true" title="Discussion link coming"></i></span>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="">Final Project Presentation</a>
+      </li>
+    
+      <li class="mt1">
+        <small class="br2 white bg-orange ph1 mr1">Due</small>
+        <a href="https://canvas.cmu.edu/courses/24179/assignments/413347">Final Project Report</a>
+      </li>
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<div class="flex mt1">
+  <span class="w-10 gray">Thu, Dec 02</span>
+  <div class="w-90 measure-wide lh-copy">
+    <h3 class="f5 normal mt0">
+      <span class="b black">
+      Final Project Presentations
+      </span>
+
+      
+        <span class="fr"><i class="fas fa-comments" aria-hidden="true" title="Discussion link coming"></i></span>
+      
+
+      
+        <span class="fr mr2"><i class="fas fa-window-maximize" aria-hidden="true" title="Slides link coming"></i> Slides</span>
+      
+    </h3>
+    <ul class="list pl0 mv0">
+    
+    </ul>
+    <ul class="list pl0 mt0">
+    
+
+  </ul>
+  </div>
+</div>
+
+<h2 id="details">Details</h2>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Expected skills you should have before entering the course:</p>
+
+<ul>
+  <li>Programming</li>
+  <li><a href="https://git-scm.com">Git</a> (collaborative software development)</li>
+</ul>
+
+<p>Skills that can be learned during the course:</p>
+
+<ul>
+  <li>JavaScript</li>
+  <li>HTML, CSS, DOM</li>
+  <li>Vega, Vega-Lite, D3</li>
+  <li>SQL</li>
+</ul>
+
+<h3 id="projects">Projects</h3>
+
+<p>The course is project oriented. It includes a large final group-defined project along with 2 homework assignments designed to provide the stepping stones needed to complete the final project. Tentative due dates for these projects can be found at the bottom of this syllabus under the ‘Course Summary’ heading. Your work will be evaluated relative to your background and level of effort. This is a graduate class, and the assumption is that you are a mature and motivated student, and that you will define your work so that you learn and grow, given your background. Students who are taking this course as a part of a technical requirement (such as the computer science course requirement in the HCI PhD) will need to do more advanced or ambitious projects, and should consult with the instructor to make sure they are meeting this bar.</p>
+
+<p>All homework assignments are to be done as individual work. It is expected that students may assist each other with conceptual issues, but not provide code. If you use example code, you must explicitly acknowledge this in your assignment submission. If you are unsure about these boundaries, ask.</p>
+
+<h3 id="work-required">Work Required</h3>
+
+<p>This will not be an exam-heavy course. Instead, much of the work will focus on projects. The course will focus on understanding the techniques of data science and visualization through developing creative analyses and visualizations using tools to solve defined problems.</p>
+
+<p>There is no final exam in this course. Students who do well will be invited to continue on an independent project on topics related to the course, working with Prof. Perer or Prof. Moritz during a future semester.</p>
+
+<h3 id="readings">Readings</h3>
+
+<p>You will be expected to read assigned readings before the lecture they pertain to. These may include chapters drawn from textbooks about data, or readings about the research literature. To incentivize this, each student will be required to make at least one relevant postings to the discussion group before the class on which each reading is due. This participation will count toward the Participation and Attendance portion of their grade.</p>
+
+<p>All students are required to submit at least 1 substantive discussion post per lecture related to the course readings. Each student has 1 pass for skipping comments.</p>
+
+<p>Good comments typically exhibit one or more of the following:</p>
+
+<ul>
+  <li>Critiques of arguments made in the papers</li>
+  <li>Analysis of implications or future directions for work discussed in lecture or readings</li>
+  <li>Clarification of some point or detail presented in the class</li>
+  <li>Insightful questions about the readings or answers to other people’s questions</li>
+  <li>Links to web resources or examples that pertain to a lecture or reading</li>
+</ul>
+
+<h3 id="grades">Grades</h3>
+
+<p>The tentative breakdown for grading is below. As a reminder, here is the <a href="http://www.cmu.edu/policies/documents/AcademicIntegrity.htm">university policy on academic integrity</a>.</p>
+
+<ul>
+  <li>30% Homework Assignments</li>
+  <li>60% Final Project</li>
+  <li>10% Participation and Attendance</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web">The MDN web docs</a> are the go-to guide for web technolgies such as HTML, CSS, and JavaScript.</p>
+
+<p>For D3 questions, check out <a href="https://github.com/d3/d3/wiki">D3’s documentation</a>.</p>
+
+<p>For Vega-Lite questions, check out <a href="https://vega.github.io/vega-lite/docs/">the Vega-Lite documentation</a> and the examples in the <a href="https://vega.github.io/editor/">online editor</a>.</p>
+
+<h2 id="policies">Policies</h2>
+
+<h3 id="respect-for-diversity">Respect for Diversity</h3>
+
+<p>It is our intent that students from all diverse backgrounds and perspectives be well served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that students bring to this class be viewed as a resource, strength and benefit. It is our intent to present materials and activities that are respectful of diversity: gender, sexuality, disability, age, socioeconomic status, ethnicity, race, and culture. Your suggestions are encouraged and appreciated. Please let us know ways to improve the effectiveness of the course for you personally or for other students or student groups. In addition, if any of our class meetings conflict with your religious events, please let us know so that we can make arrangements for you.</p>
+
+<h3 id="accommodations-for-students-with-disabilities">Accommodations for Students with Disabilities</h3>
+
+<p>If you have a disability and are registered with the Office of Disability Resources, we encourage you to use their online system to notify us of your accommodations and discuss your needs with us as early in the semester as possible. We will work with you to ensure that accommodations are provided as appropriate. If you suspect that you may have a disability and would benefit from accommodations but are not yet registered with the Office of Disability Resources, we encourage you to contact them at <a href="mailto:access@andrew.cmu.edu">access@andrew.cmu.edu</a>.</p>
+
+<h3 id="health-and-well-being">Health and Well-being</h3>
+
+<p>This year is unlike any other. We are all under a lot of stress and uncertainty at this time. Make sure to move regularly, eat well, and reach out to your support system or us if you need to. We can all benefit from support in times of stress, and this semester is no exception.</p>
+
+<p>Due to the ongoing pandemic, <strong>do not under any circumstances physically come to class sick</strong> to keep your fellow students and instructors safe. Reach out to the instructors to determine a way to participate remotely and/or catch-up.</p>
+
+<p>If you or anyone you know experiences any academic stress, difficult life events, or feelings like anxiety or depression, we strongly encourage you to seek support. Counseling and Psychological Services (CaPS) is here to help; call <a href="tel:412-268-2922">412-268-2922</a> and visit their website at <a href="http://www.cmu.edu/counseling/">www.cmu.edu/counseling/</a>. Consider reaching out to a friend, faculty or family member you trust for help getting connected to the support that can help. If you or someone you know is feeling suicidal or in danger of self-harm, call someone immediately, day or night:</p>
+
+<ul>
+  <li>CaPS: <a href="tel:412-268-2922">412-268-2922</a></li>
+  <li>Re:solve Crisis Network: <a href="tel:888-796-8226">888-796-8226</a></li>
+</ul>
+
+<p>If the situation is life threatening, call the police. On campus call CMU Police: <a href="tel:412-268-2323">412-268-2323</a>. Off campus: <a href="tel:911">911</a>.</p>
+
+<h3 id="food-insecurity">Food Insecurity</h3>
+
+<p>If you are worried about affording food or feeling insecure about food, there are resources on campus who can help. Email the CMU Food Pantry Coordinator to schedule an appointment:
+Pantry Coordinator: <a href="mailto:cmu-pantry@andrew.cmu.edu">cmu-pantry@andrew.cmu.edu</a>
+SLICE office: <a href="tel:412-268-8704">412-268-8704</a></p>
+
+<p>If you have questions about this or your coursework, please let the instructors know. Thank you, and have a great semester.</p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>Material for this class has been adapted from classes taught by <a href="https://courses.cs.washington.edu/courses/cse512/">Jeffrey Heer at the University of Washington</a>, and <a href="http://vis.csail.mit.edu/classes/6.859/">Arvind Satyanarayan at MIT</a>, which in turn build on materials from many others.</p>
+
+<p>The class draws heavily on materials and examples found online, and we try our best to give credit by linking to the original source. Please contact us if you find materials where credit is missing or that you would rather have removed.</p>
