@@ -16,7 +16,7 @@
 title: Adam Perer&thinsp;&middot;&thinsp;Carnegie Mellon HCII
 email: adamperer@cmu.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Adam Perer is an Assistant Research Professor at Carnegie Mellon University, where he is a member of the Human-Computer Interaction Institute.
+  Adam Perer is an Assistant Professor at Carnegie Mellon University, where he is a member of the Human-Computer Interaction Institute.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://perer.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: adamperer
