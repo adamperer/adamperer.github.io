@@ -6,6 +6,8 @@ role: PhD Student
 advisors:
   - Adam Perer
   - Jason I. Hong
+alumni_since: 2024
+phd_graduate: true
 ---
 
 Loves Milka.
