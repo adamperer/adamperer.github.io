@@ -1,5 +1,5 @@
 ---
 name: Anthony Levin-Decanini
-role: Collaboror
+role: Collaborator
 image: /assets/person.png
 ---
