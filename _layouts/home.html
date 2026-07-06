@@ -183,9 +183,9 @@ layout: default
              <div id="advising" class="vital-info">
               <h5>Advising</h5>
               <br>
+              {% assign adam_students = site.people | where: "advisors", "Adam Perer" %}
+
               <ul class="list pl0">
-                {% assign adam_students = site.people | where: "advisors", "Adam Perer" %}
-                
                 {% for role in page.roles %}
                 <span>{{role}}s</span>
                 {% for person in adam_students %}
@@ -193,13 +193,19 @@ layout: default
                 {% unless person.alumni_since %}
                 <li class="pb3">
                   <a href="{{person.website}}">{{ person.name }}</a>
-                  <!-- <span class="db f6 black-80"
-                    >{{ person.role }}</span
-                  > -->
                 </li>
                 {% endunless %}
                 {% endif %}
                 {% endfor %}
+                {% if role == "PhD Student" %}
+                {% assign phd_alumni = adam_students | where: "role", "PhD Student" | where_exp: "person", "person.alumni_since" | where_exp: "person", "person.name != 'Sachin Grover'" | where_exp: "person", "person.name != 'Carol (Xinyi) Zheng'" | sort: "alumni_since" | reverse %}
+                {% for person in phd_alumni %}
+                <li class="pb1" style="font-size: 0.85em;">
+                  {% if person.website %}<a href="{{person.website}}" style="color: inherit;">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}
+                  <span>({{ person.alumni_since }})</span>
+                </li>
+                {% endfor %}
+                {% endif %}
                 <br>
                 {% endfor %}
               </ul>
