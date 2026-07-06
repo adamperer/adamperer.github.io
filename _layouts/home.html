@@ -187,15 +187,13 @@ layout: default
 
               <ul class="list pl0">
                 {% for role in page.roles %}
+                {% assign current_in_role = adam_students | where: "role", role | where_exp: "person", "person.alumni_since == nil" %}
+                {% if current_in_role.size > 0 or role == "PhD Student" %}
                 <span>{{role}}s</span>
-                {% for person in adam_students %}
-                {% if person.role == role %}
-                {% unless person.alumni_since %}
+                {% for person in current_in_role %}
                 <li class="pb3">
                   <a href="{{person.website}}">{{ person.name }}</a>
                 </li>
-                {% endunless %}
-                {% endif %}
                 {% endfor %}
                 {% if role == "PhD Student" %}
                 {% assign phd_alumni = adam_students | where: "role", "PhD Student" | where_exp: "person", "person.alumni_since" | where_exp: "person", "person.name != 'Sachin Grover'" | where_exp: "person", "person.name != 'Carol (Xinyi) Zheng'" | sort: "alumni_since" | reverse %}
@@ -207,6 +205,7 @@ layout: default
                 {% endfor %}
                 {% endif %}
                 <br>
+                {% endif %}
                 {% endfor %}
               </ul>
                <hr>
