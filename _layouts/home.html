@@ -29,31 +29,16 @@ layout: default
             <img id="ap-img" src="/assets/img/adamperer.jpg" class="img-responsive" style="border-radius: 12%; aspect-ratio: 1 / 1; object-fit: cover;">
           </div> <!-- /col-md-4 -->
           </div> <!-- row -->
-          <div class="bio">
-            <!-- <p>I'm a human-computer interaction researcher who studies how people engage and make decisions with data and AI. I design interactive visualizations that make complex algorithms interpretable and actionable, and I immerse myself in high-stakes domains — from critical care medicine to child welfare — where data and algorithms are transforming consequential decisions.</p>
-
-            <p>My research follows three strategies: I embed myself directly in high-stakes domains through long-term partnerships with physicians, public health officials, social workers, and conservationists; I build and deploy real systems with real users, because data analysis and decision-making can't be fully replicated in controlled experiments; and I collaborate across disciplines, from biomedical informatics to machine learning, to understand how visualization principles generalize.</p> -->
-
-            <p>This shapes three interconnected lines of research:</p>
+          <p>This shapes three interconnected lines of research:</p>
+          <div class="subway-map">
 
             <div class="research-themes">
-              <div class="research-theme"><strong>Improving Healthcare with Visualization.</strong> I study how visualization can bridge the gap between what AI systems know and what clinicians and patients can actually use at the point of care, from <a href="https://dig.cmu.edu/publications/2026-phora.html">PHORA</a>, our NIH-funded clinical decision support system for pulmonary arterial hypertension, to studies with critical care physicians revealing how AI recommendations shape clinical reasoning (<a href="https://dig.cmu.edu/publications/2023-sepsis-ai.html">CHI 2023</a>, <a href="https://dig.cmu.edu/publications/2026-intelligentcues.html">CHI 2026</a>), to <a href="https://dig.cmu.edu/publications/2024-medsyn.html">MedSyn</a>, a generative AI that produces anatomically accurate 3D CT scans from radiology reports.</div>
+              <div class="research-theme theme-healthcare"><strong>Improving Healthcare with Visualization.</strong> I study how visualization can bridge the gap between what AI systems know and what clinicians and patients can actually use at the point of care, from <a href="https://dig.cmu.edu/publications/2026-phora.html">PHORA</a>, our NIH-funded clinical decision support system for pulmonary arterial hypertension, to studies with critical care physicians revealing how AI recommendations shape clinical reasoning (<a href="https://dig.cmu.edu/publications/2023-sepsis-ai.html">CHI 2023</a>, <a href="https://dig.cmu.edu/publications/2026-intelligentcues.html">CHI 2026</a>), to <a href="https://dig.cmu.edu/publications/2024-medsyn.html">MedSyn</a>, a generative AI that produces anatomically accurate 3D CT scans from radiology reports.</div>
 
-              <div class="research-theme"><strong>Improving AI Development with Visualization.</strong> AI models are easy to train but hard to understand. My group builds interactive tools that bring human judgment into every phase of AI development: specifying the right model with domain experts (<a href="https://dig.cmu.edu/publications/2025-tempo.html">Tempo</a>, <a href="https://dig.cmu.edu/publications/2025-divisi.html">Divisi</a>), continuously profiling data during development (<a href="https://dig.cmu.edu/publications/2023-autoprofiler.html">AutoProfiler</a>, Texture), and systematically evaluating model behavior at scale (<a href="https://dig.cmu.edu/publications/2023-zeno.html">Zeno</a>, <a href="https://dig.cmu.edu/publications/2026-vipera.html">Vipera</a>).</div>
+              <div class="research-theme theme-ai-dev"><strong>Improving AI Development with Visualization.</strong> AI models are easy to train but hard to understand. My group builds interactive tools that bring human judgment into every phase of AI development: specifying the right model with domain experts (<a href="https://dig.cmu.edu/publications/2025-tempo.html">Tempo</a>, <a href="https://dig.cmu.edu/publications/2025-divisi.html">Divisi</a>), continuously profiling data during development (<a href="https://dig.cmu.edu/publications/2023-autoprofiler.html">AutoProfiler</a>, Texture), and systematically evaluating model behavior at scale (<a href="https://dig.cmu.edu/publications/2023-zeno.html">Zeno</a>, <a href="https://dig.cmu.edu/publications/2026-vipera.html">Vipera</a>).</div>
 
-              <div class="research-theme"><strong>Improving Human-AI Collaboration with Visualization.</strong> Through deployments in <a href="https://dig.cmu.edu/publications/2022-afst-partnerships.html">child welfare</a>, the <a href="https://dig.cmu.edu/publications/2025-pdmp.html">opioid crisis</a>, and <a href="https://dig.cmu.edu/publications/2024-transparencywild.html">wildlife conservation</a>, I study how practitioners make sense of, trust, and act on AI, and how explanations can either support or actively mislead high-stakes decisions.</div>
+              <div class="research-theme theme-human-ai"><strong>Improving Human-AI Collaboration with Visualization.</strong> Through deployments in <a href="https://dig.cmu.edu/publications/2022-afst-partnerships.html">child welfare</a>, the <a href="https://dig.cmu.edu/publications/2025-pdmp.html">opioid crisis</a>, and <a href="https://dig.cmu.edu/publications/2024-transparencywild.html">wildlife conservation</a>, I study how practitioners make sense of, trust, and act on AI, and how explanations can either support or actively mislead high-stakes decisions.</div>
             </div>
-
-            <p>I co-founded and co-direct the <a href="https://dig.cmu.edu/">Data Interaction Group (DIG)</a> with Dominik Moritz, and beginning Fall 2026, I serve as Director of the HCII PhD Program.</p>
-
-            <div class="row">
-            <div class="col-md-12"><p><span class="lead">{{ page.list_title | default: "Bio" }}</span></p></div>
-          </div>
-
-
-            <p>Adam Perer is an Associate Professor at Carnegie Mellon University's Human-Computer Interaction Institute, where he co-directs the <a href="https://dig.cmu.edu/">Data Interaction Group</a> and is the incoming HCII PhD Program Director. His research combines interactive visualization with data science and AI to support decision-making in high-stakes domains, with a focus on clinical medicine. His work has been published in over 50 papers across CHI, IEEE VIS, CSCW, and IUI, and has been cited more than 8,000 times. His research is supported by the NIH, NSF, and numerous industry and government partners. He has served in leadership roles across the visualization and HCI communities, including General Chair of the IEEE Symposium on Visualization in Data Science, Subcommittee Chair for ACM CHI, and Area Papers Chair for IEEE VIS. Prior to CMU, he was a research scientist at IBM Research.  He holds a Ph.D. in Computer Science from the University of Maryland, College Park.</p>
-          </div>
-
 
           {%- if site.highlights.size > 10 -%}
           <div class="row">
@@ -69,54 +54,58 @@ layout: default
             </div>
             <div class="media-body">
               <h4 class="media-heading">{{highlight.title}}</h4>
-              <!--  <span class="label label-primary">PAPER</span> -->
-              <small>
-                {{highlight.content}}
-              </small>
+              <small>{{highlight.content}}</small>
             </div>
           </div>
           {%- endfor -%}
-
           {%- endif -%}
 
 
           {%- if site.publications.size > 0 -%}
-          <div class="row">
-            <div class="col-md-12"><p><span class="lead">{{ page.list_title | default: "Selected Publications" }}</span> (<a href="https://dig.cmu.edu/publications#authors=Adam%20Perer">View all publications</a>)</p></div>
-          </div>
+          <p style="font-size: 0.9em; color: #666; margin: 0.25em 0 0.75em;">Recent papers across these themes — <a href="https://dig.cmu.edu/publications#authors=Adam%20Perer">view all publications</a></p>
 
           {% assign adam_pubs = site.publications | where: "authors", "Adam Perer" %}
           {% assign adam_highlight_pubs = adam_pubs | where: "highlight", "true" %}
-          {% assign recent_pubs = adam_highlight_pubs | reverse %} {% for pub in
-            recent_pubs %}
-          <div class="media">
+          {% assign recent_pubs = adam_highlight_pubs | reverse %}
+          {% for pub in recent_pubs %}
+          <div class="media subway-stop">
+            {% if pub.research_themes %}
+            <div class="pub-dots">
+              {% if pub.research_themes contains 'healthcare' %}<span class="pub-dot pub-dot-healthcare"></span>{% endif %}
+              {% if pub.research_themes contains 'ai-dev' %}<span class="pub-dot pub-dot-ai-dev"></span>{% endif %}
+              {% if pub.research_themes contains 'human-ai' %}<span class="pub-dot pub-dot-human-ai"></span>{% endif %}
+              {% if pub.research_themes contains 'network-viz' %}<span class="pub-dot pub-dot-network-viz"></span>{% endif %}
+            </div>
+            {% endif %}
             <div class="media-left media-top">
               <a href="https://dig.cmu.edu{{pub.url}}">
-                {% assign thumb = 'assets' | append: pub.url | replace: '.html',
-                '_thumb.avif' %}
+                {% assign thumb = 'assets' | append: pub.url | replace: '.html', '_thumb.avif' %}
                 <img class="media-object img-responsive img-thumbnail" src="{{thumb}}" alt="{{pub.title}}">
               </a>
             </div>
             <div class="media-body">
-              <h4 class="media-heading"><a href="https://dig.cmu.edu{{pub.url}}" class="b link black"
-                >{{pub.title}}</a></h4>
+              <h4 class="media-heading"><a href="https://dig.cmu.edu{{pub.url}}" class="b link black">{{pub.title}}</a></h4>
               <div class="measure-wide">
                 <div class="mb1">
-                  <span class="fw2">
-                    {% for author in pub.authors %}{% include person name=author %}{% unless forloop.last %},{% endunless %}{% endfor %}</span
-                  >
+                  <span class="fw2">{% for author in pub.authors %}{% include person name=author %}{% unless forloop.last %},{% endunless %}{% endfor %}</span>
                   <br><span class="nowrap db black-80">{{ pub.venue }} {{ pub.year }}</span>
-                  
                 </div>
               </div>
             </div>
           </div>
-          
           {% endfor %}
-
           {%- endif -%}
 
-          <p><p>(<a href="https://dig.cmu.edu/publications#authors=Adam%20Perer">View all publications</a>)</p></p>
+          </div><!-- /subway-map -->
+
+          <div class="bio">
+            <div class="row">
+              <div class="col-md-12"><p><span class="lead">{{ page.list_title | default: "Bio" }}</span></p></div>
+            </div>
+            <p>Adam Perer is an Associate Professor at Carnegie Mellon University's Human-Computer Interaction Institute, where he co-directs the <a href="https://dig.cmu.edu/">Data Interaction Group</a> and is the incoming HCII PhD Program Director. His research combines interactive visualization with data science and AI to support decision-making in high-stakes domains, with a focus on clinical medicine. His work has been published in over 50 papers across CHI, IEEE VIS, CSCW, and IUI, and has been cited more than 8,000 times. His research is supported by the NIH, NSF, and numerous industry and government partners. He has served in leadership roles across the visualization and HCI communities, including General Chair of the IEEE Symposium on Visualization in Data Science, Subcommittee Chair for ACM CHI, and Area Papers Chair for IEEE VIS. Prior to CMU, he was a research scientist at IBM Research.  He holds a Ph.D. in Computer Science from the University of Maryland, College Park.</p>
+
+            <p>I co-founded and co-direct the <a href="https://dig.cmu.edu/">Data Interaction Group (DIG)</a> with Dominik Moritz, and beginning Fall 2026, I serve as Director of the HCII PhD Program.</p>
+          </div>
 
         </div> <!-- /col-md-9 -->
 
@@ -229,3 +218,47 @@ layout: default
       </div> <!-- /container -->
 
     </div> <!-- /home -->
+
+<script>
+(function () {
+  function updateLineHeights() {
+    var map = document.querySelector('.subway-map');
+    if (!map) return;
+    ['healthcare', 'ai-dev', 'human-ai'].forEach(function (theme) {
+      var themeEl = map.querySelector('.research-theme.theme-' + theme);
+      if (!themeEl) return;
+      var dots = map.querySelectorAll('.pub-dot-' + theme);
+      if (!dots.length) {
+        themeEl.style.setProperty('--line-height', '0px');
+        return;
+      }
+      var lastDot = dots[dots.length - 1];
+      var themeTop = themeEl.getBoundingClientRect().top;
+      var dotRect  = lastDot.getBoundingClientRect();
+      var height   = (dotRect.top + dotRect.height / 2) - themeTop - 9;
+      themeEl.style.setProperty('--line-height', Math.max(0, height) + 'px');
+    });
+
+    // Network-viz line: injected div spanning first to last pub dot
+    var nvDots = map.querySelectorAll('.pub-dot-network-viz');
+    if (nvDots.length) {
+      var nvLine = map.querySelector('.network-viz-line');
+      if (!nvLine) {
+        nvLine = document.createElement('div');
+        nvLine.className = 'network-viz-line';
+        map.appendChild(nvLine);
+      }
+      var mapRect   = map.getBoundingClientRect();
+      var firstRect = nvDots[0].getBoundingClientRect();
+      var lastRect  = nvDots[nvDots.length - 1].getBoundingClientRect();
+      var top    = firstRect.top + firstRect.height / 2 - mapRect.top;
+      var height = (lastRect.top + lastRect.height / 2 - mapRect.top) - top;
+      nvLine.style.top    = top + 'px';
+      nvLine.style.height = Math.max(0, height) + 'px';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', updateLineHeights);
+  window.addEventListener('load', updateLineHeights);
+  window.addEventListener('resize', updateLineHeights);
+}());
+</script>

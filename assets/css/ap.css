@@ -86,21 +86,33 @@ p.lead {
   color: #8b0000;
 }
 
+/* Vignelli-inspired subway theme colors */
+:root {
+  --theme-healthcare:   #EE352E;
+  --theme-ai-dev:       #0039A6;
+  --theme-human-ai:     #00933C;
+  --theme-network-viz:  #B933AD;
+}
+
+/*
+  Three parallel subway lines running down the left of the research themes.
+  Lines are 4px wide, centers at 8px / 22px / 36px from container left.
+  Container padding-left: 48px clears all three lines.
+*/
+/* Subway map wrapper — three touching lines run its full height */
+.subway-map {
+  position: relative;
+  padding-left: 40px;
+  overflow: hidden;
+  clip-path: inset(0);
+}
+
+/* research-themes inherits padding from subway-map; no own lines needed */
 .research-themes {
   position: relative;
-  padding-left: 30px;
 }
 
-.research-themes::before {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 8px;
-  bottom: 8px;
-  width: 3px;
-  background-color: #8b0000;
-}
-
+/* Base station dot — positioned per theme class below */
 .research-theme {
   position: relative;
   margin-bottom: 18px;
@@ -109,17 +121,75 @@ p.lead {
 .research-theme::before {
   content: '';
   position: absolute;
-  left: -26px;
-  top: 5px;
-  width: 13px;
-  height: 13px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: white;
-  border: 3px solid #8b0000;
+  z-index: 1;
 }
 
-.research-theme strong {
-  color: #8b0000;
+/* Centered on each line (centers at 8/20/32px from subway-map left, padding-left: 40px) */
+.research-theme.theme-healthcare::before { left: -37px; border: 2px solid var(--theme-healthcare); }
+.research-theme.theme-ai-dev::before     { left: -25px; border: 2px solid var(--theme-ai-dev); }
+.research-theme.theme-human-ai::before   { left: -13px; border: 2px solid var(--theme-human-ai); }
+
+/* Each line starts at its own station and extends through all publications */
+.research-theme.theme-healthcare::after,
+.research-theme.theme-ai-dev::after,
+.research-theme.theme-human-ai::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  width: 10px;
+  height: var(--line-height, 10000px);
+}
+.research-theme.theme-healthcare::after { left: -37px; background: var(--theme-healthcare); }
+.research-theme.theme-ai-dev::after     { left: -25px; background: var(--theme-ai-dev); }
+.research-theme.theme-human-ai::after   { left: -13px; background: var(--theme-human-ai); }
+
+.research-theme strong { color: #8b0000; }
+.research-theme.theme-healthcare strong { color: var(--theme-healthcare); }
+.research-theme.theme-ai-dev strong      { color: var(--theme-ai-dev); }
+.research-theme.theme-human-ai strong    { color: var(--theme-human-ai); }
+
+/* Publication subway stops — dots positioned in the left margin on their line */
+.subway-stop {
+  position: relative;
+  overflow: visible;
+}
+
+.pub-dots {
+  position: absolute;
+  left: -40px;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  z-index: 1;
+}
+
+.pub-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  top: 14px;
+}
+
+/* Centers at 8/20/32px from subway-map left; pub-dots starts at 0px from subway-map left */
+.pub-dot-healthcare  { left: 3px;  border: 2px solid var(--theme-healthcare); }
+.pub-dot-ai-dev      { left: 15px; border: 2px solid var(--theme-ai-dev); }
+.pub-dot-human-ai    { left: 27px; border: 2px solid var(--theme-human-ai); }
+.pub-dot-network-viz { left: 27px; border: 2px solid var(--theme-network-viz); }
+
+/* JS-injected div that draws the network-viz line between its first and last pub stop */
+.network-viz-line {
+  position: absolute;
+  left: 27px;
+  width: 10px;
+  background: var(--theme-network-viz);
+  pointer-events: none;
 }
 
 .navbar-brand,.navbar-nav li a {
