@@ -69,7 +69,29 @@ layout: default
           {% assign recent_pubs = adam_highlight_pubs | reverse %}
           {% for pub in recent_pubs %}
           <div class="media subway-stop">
+            {% assign img_shadow = "" %}
             {% if pub.research_themes %}
+            {% assign theme_count = 0 %}
+            {% if pub.research_themes contains 'healthcare' %}{% assign theme_count = theme_count | plus: 1 %}{% endif %}
+            {% if pub.research_themes contains 'ai-dev' %}{% assign theme_count = theme_count | plus: 1 %}{% endif %}
+            {% if pub.research_themes contains 'human-ai' %}{% assign theme_count = theme_count | plus: 1 %}{% endif %}
+            {% if pub.research_themes contains 'network-viz' %}{% assign theme_count = theme_count | plus: 1 %}{% endif %}
+            {% assign shadow_offset = 3 %}
+            {% assign ha_spread = 0 %}{% assign nv_spread = 0 %}{% assign ai_spread = 0 %}{% assign hc_spread = 0 %}
+            {% if pub.research_themes contains 'human-ai' %}{% assign ha_spread = shadow_offset %}{% capture img_shadow %}{{ img_shadow }}{% if img_shadow != "" %}, {% endif %}0 0 0 {{ shadow_offset }}px var(--theme-human-ai){% endcapture %}{% assign shadow_offset = shadow_offset | plus: 3 %}{% endif %}
+            {% if pub.research_themes contains 'network-viz' %}{% assign nv_spread = shadow_offset %}{% capture img_shadow %}{{ img_shadow }}{% if img_shadow != "" %}, {% endif %}0 0 0 {{ shadow_offset }}px var(--theme-network-viz){% endcapture %}{% assign shadow_offset = shadow_offset | plus: 3 %}{% endif %}
+            {% if pub.research_themes contains 'ai-dev' %}{% assign ai_spread = shadow_offset %}{% capture img_shadow %}{{ img_shadow }}{% if img_shadow != "" %}, {% endif %}0 0 0 {{ shadow_offset }}px var(--theme-ai-dev){% endcapture %}{% assign shadow_offset = shadow_offset | plus: 3 %}{% endif %}
+            {% if pub.research_themes contains 'healthcare' %}{% assign hc_spread = shadow_offset %}{% capture img_shadow %}{{ img_shadow }}{% if img_shadow != "" %}, {% endif %}0 0 0 {{ shadow_offset }}px var(--theme-healthcare){% endcapture %}{% assign shadow_offset = shadow_offset | plus: 3 %}{% endif %}
+            {% assign ha_w = 18 | minus: ha_spread %}
+            {% assign nv_w = 18 | minus: nv_spread %}
+            {% assign ai_w = 30 | minus: ai_spread %}
+            {% assign hc_w = 42 | minus: hc_spread %}
+            <div class="pub-connectors{% if theme_count > 1 %} multi-theme{% endif %}" style="--ha-w: {{ ha_w }}px; --nv-w: {{ nv_w }}px; --ai-w: {{ ai_w }}px; --hc-w: {{ hc_w }}px">
+              {% if pub.research_themes contains 'healthcare' %}<span class="pub-connector pub-connector-healthcare"></span>{% endif %}
+              {% if pub.research_themes contains 'ai-dev' %}<span class="pub-connector pub-connector-ai-dev"></span>{% endif %}
+              {% if pub.research_themes contains 'human-ai' %}<span class="pub-connector pub-connector-human-ai"></span>{% endif %}
+              {% if pub.research_themes contains 'network-viz' %}<span class="pub-connector pub-connector-network-viz"></span>{% endif %}
+            </div>
             <div class="pub-dots">
               {% if pub.research_themes contains 'healthcare' %}<span class="pub-dot pub-dot-healthcare"></span>{% endif %}
               {% if pub.research_themes contains 'ai-dev' %}<span class="pub-dot pub-dot-ai-dev"></span>{% endif %}
@@ -80,7 +102,11 @@ layout: default
             <div class="media-left media-top">
               <a href="https://dig.cmu.edu{{pub.url}}">
                 {% assign thumb = 'assets' | append: pub.url | replace: '.html', '_thumb.avif' %}
-                <img class="media-object img-responsive img-thumbnail" src="{{thumb}}" alt="{{pub.title}}">
+                {% if img_shadow != "" %}
+                  <img class="media-object img-responsive img-thumbnail" src="{{thumb}}" alt="{{pub.title}}" style="border-color: transparent; box-shadow: {{ img_shadow }};">
+                {% else %}
+                  <img class="media-object img-responsive img-thumbnail" src="{{thumb}}" alt="{{pub.title}}">
+                {% endif %}
               </a>
             </div>
             <div class="media-body">
@@ -232,14 +258,14 @@ layout: default
         themeEl.style.setProperty('--line-height', '0px');
         return;
       }
-      var lastDot = dots[dots.length - 1];
+      var lastDot  = dots[dots.length - 1];
       var themeTop = themeEl.getBoundingClientRect().top;
       var dotRect  = lastDot.getBoundingClientRect();
       var height   = (dotRect.top + dotRect.height / 2) - themeTop - 9;
       themeEl.style.setProperty('--line-height', Math.max(0, height) + 'px');
     });
 
-    // Network-viz line: injected div spanning first to last pub dot
+    // Network-viz line: injected div spanning first to last pub dot center
     var nvDots = map.querySelectorAll('.pub-dot-network-viz');
     if (nvDots.length) {
       var nvLine = map.querySelector('.network-viz-line');

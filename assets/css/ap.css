@@ -131,7 +131,7 @@ p.lead {
   height: 10px;
   border-radius: 50%;
   background: white;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Centered on each line (padding-left: 55px) */
@@ -148,6 +148,7 @@ p.lead {
   top: 9px;
   width: 10px;
   height: var(--line-height, 10000px);
+  z-index: 1;
 }
 .research-theme.theme-healthcare::after { left: -52px; background: var(--theme-healthcare); }
 .research-theme.theme-ai-dev::after     { left: -40px; background: var(--theme-ai-dev); }
@@ -164,13 +165,22 @@ p.lead {
   overflow: visible;
 }
 
+.pub-connectors {
+  position: absolute;
+  left: -55px;
+  top: 0;
+  height: 100%;
+  width: 55px;
+  z-index: 0;
+}
+
 .pub-dots {
   position: absolute;
   left: -55px;
   top: 0;
   height: 100%;
   width: 55px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .pub-dot {
@@ -188,6 +198,30 @@ p.lead {
 .pub-dot-human-ai    { left: 27px; border: 2px solid var(--theme-human-ai); }
 .pub-dot-network-viz { left: 27px; border: 2px solid var(--theme-network-viz); }
 
+/* Connectors: horizontal bars from each dot's right edge to the image.
+   In multi-theme papers, the further lines branch at 45° (Vignelli style)
+   so each arrives at a different height on the image border. */
+.pub-connector {
+  position: absolute;
+}
+
+/* Connectors: width and diagonal set per-pub via CSS vars --ha-w/--nv-w/--ai-w/--hc-w
+   (set as inline style on .pub-connectors by Liquid; defaults match the 3-ring case) */
+.pub-connector-human-ai    { left: 37px; top: 14px; width: var(--ha-w, 15px); height: 10px; background: var(--theme-human-ai); }
+.pub-connector-network-viz { left: 37px; top: 14px; width: var(--nv-w, 15px); height: 10px; background: var(--theme-network-viz); }
+
+.pub-connector-ai-dev { left: 25px; top: 14px; width: var(--ai-w, 24px); height: 10px; background: var(--theme-ai-dev); }
+.pub-connectors.multi-theme .pub-connector-ai-dev {
+  height: calc(var(--ai-w, 24px) + 10px);
+  clip-path: polygon(0px 0px, var(--ai-w, 24px) var(--ai-w, 24px), var(--ai-w, 24px) calc(var(--ai-w, 24px) + 10px), 0px 10px);
+}
+
+.pub-connector-healthcare { left: 13px; top: 14px; width: var(--hc-w, 33px); height: 10px; background: var(--theme-healthcare); }
+.pub-connectors.multi-theme .pub-connector-healthcare {
+  height: calc(var(--hc-w, 33px) + 10px);
+  clip-path: polygon(0px 0px, var(--hc-w, 33px) var(--hc-w, 33px), var(--hc-w, 33px) calc(var(--hc-w, 33px) + 10px), 0px 10px);
+}
+
 /* JS-injected div that draws the network-viz line between its first and last pub stop */
 .network-viz-line {
   position: absolute;
@@ -195,6 +229,7 @@ p.lead {
   width: 10px;
   background: var(--theme-network-viz);
   pointer-events: none;
+  z-index: 1;
 }
 
 .navbar-brand,.navbar-nav li a {
