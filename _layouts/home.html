@@ -256,9 +256,22 @@ layout: default
       'ai-dev':      rs.getPropertyValue('--theme-ai-dev').trim(),
       'healthcare':  rs.getPropertyValue('--theme-healthcare').trim()
     };
-    var startX   = { 'human-ai': 37, 'network-viz': 37, 'ai-dev': 25, 'healthcare': 13 };
+    var startX    = { 'human-ai': 37, 'network-viz': 37, 'ai-dev': 25, 'healthcare': 13 };
     var ringOrder = ['human-ai', 'network-viz', 'ai-dev', 'healthcare'];
-    var svgNS    = 'http://www.w3.org/2000/svg';
+    var svgNS     = 'http://www.w3.org/2000/svg';
+    var dotTop    = 14, dotBottom = 24;
+    var dotCenterX = { 'human-ai': 32, 'network-viz': 32, 'ai-dev': 20, 'healthcare': 8 };
+    // k ≈ 0.552: cubic-bezier constant for a quarter-circle arc
+    var k = 0.552;
+
+    // The first network-viz pub has no line above it, so its connector curves upward
+    // (curving down would blend into the continuing line below).
+    var firstNVStop = null;
+    document.querySelectorAll('.subway-stop').forEach(function (s) {
+      if (firstNVStop) return;
+      var cd = s.querySelector('.pub-connectors');
+      if (cd && cd.querySelector('.pub-connector-network-viz')) firstNVStop = s;
+    });
 
     document.querySelectorAll('.subway-stop').forEach(function (stop) {
       var cd = stop.querySelector('.pub-connectors');
@@ -278,12 +291,6 @@ layout: default
       });
       if (!present.length) return;
 
-      // Vignelli quarter-turn: each line drops vertically from the dot then curves right to its ring.
-      // CP1 holds x constant (vertical start tangent); CP2 holds y constant (horizontal end tangent).
-      // Path starts at dotTop (hidden behind the dot) so the curve appears to flow from the station.
-      var dotTop    = 14;
-      var dotBottom = 24;
-      var dotCenterX = { 'human-ai': 32, 'network-viz': 32, 'ai-dev': 20, 'healthcare': 8 };
       var nextY = dotBottom + 12, arrivals = {};
       present.forEach(function (t) { arrivals[t] = nextY; nextY += 12; });
 
@@ -293,13 +300,26 @@ layout: default
 
       // Draw outermost first so innermost sits on top
       present.slice().reverse().forEach(function (t) {
-        var x0   = dotCenterX[t];
-        var x1   = startX[t] + widths[t];   // ring outer edge
-        var yS   = dotTop;                   // start hidden behind dot; emerges at dot bottom
-        var y1   = arrivals[t];
-        var midY = (yS + y1) / 2;
-        var midX = (x0 + x1) / 2;
-        var d = 'M ' + x0 + ' ' + yS + ' C ' + x0 + ' ' + midY + ' ' + midX + ' ' + y1 + ' ' + x1 + ' ' + y1;
+        var x0 = dotCenterX[t];
+        var x1 = startX[t] + widths[t];   // ring outer edge
+        var yS, y1, cpY, cpX, d;
+
+        if (t === 'network-viz' && stop === firstNVStop) {
+          // Curve upward: start at dot bottom, arrive just above the dot area
+          yS  = dotBottom;
+          y1  = dotTop - 10;               // ≈ 4px — top portion of image ring
+          cpY = yS + k * (y1 - yS);        // negative delta → control point goes up
+          cpX = x1 - k * (x1 - x0);
+          d   = 'M ' + x0 + ' ' + yS + ' C ' + x0 + ' ' + cpY + ' ' + cpX + ' ' + y1 + ' ' + x1 + ' ' + y1;
+        } else {
+          // Normal quarter-turn: start hidden behind dot at dotTop, emerge going downward
+          yS  = dotTop;
+          y1  = arrivals[t];
+          cpY = yS + k * (y1 - yS);
+          cpX = x1 - k * (x1 - x0);
+          d   = 'M ' + x0 + ' ' + yS + ' C ' + x0 + ' ' + cpY + ' ' + cpX + ' ' + y1 + ' ' + x1 + ' ' + y1;
+        }
+
         var path = document.createElementNS(svgNS, 'path');
         path.setAttribute('d', d);
         path.setAttribute('stroke', colors[t]);
