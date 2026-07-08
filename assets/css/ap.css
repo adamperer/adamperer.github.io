@@ -6,12 +6,17 @@ body {
 
     /* Warning: if you want alternate font weights, you need to go back to Google Web Fonts and include them in the collection that gets included via <link> */
     font-weight: 400;
-    font-family: 'Roboto', 'Source Sans Pro', 'Open Sans',Helvetica,Arial,sans-serif;
+    font-family: 'Inter', 'Source Sans Pro', Helvetica, Arial, sans-serif;
     font-size: 15px;
 }
 
-a,a:hover {
-    color: #b00;
+a {
+    color: #555;
+    text-decoration: none;
+}
+a:hover {
+    color: #1a1a1a;
+    text-decoration: underline;
 }
 
 p {
@@ -23,7 +28,7 @@ p.lead {
 }
 
 .label-ap {
-    background-color: #b00;
+    background-color: #1a1a1a;
 }
 
 /* bootstrap properties */
@@ -33,24 +38,24 @@ p.lead {
 }
 
 #apnav {
-  background-color: #b00;
+  background-color: #1a1a1a;
   background-image: none;
   background-repeat: no-repeat;
   filter: none;
-  border-color: #777777;
+  border-color: #1a1a1a;
 }
 
 #apnav .navbar-brand {
     color: #FFFFFF;
     font-size: 2.5em;
-    font-family:"Bungee",'Open Sans',Helvetica,Arial,sans-serif;
-    font-weight: 400;
+    font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 #apnav .apoutline {
-  font-family:"Bungee Hairline",'Open Sans',Helvetica,Arial,sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 #apnav .navbar-brand a {
@@ -83,7 +88,7 @@ p.lead {
 
 .overview-highlight {
   font-weight: 700;
-  color: #8b0000;
+  color: #1a1a1a;
 }
 
 /* Vignelli-inspired subway theme colors */
@@ -102,7 +107,7 @@ p.lead {
 /* Subway map wrapper — three touching lines run its full height */
 .subway-map {
   position: relative;
-  padding-left: 40px;
+  padding-left: 55px;
   overflow: hidden;
   clip-path: inset(0);
 }
@@ -129,10 +134,10 @@ p.lead {
   z-index: 1;
 }
 
-/* Centered on each line (centers at 8/20/32px from subway-map left, padding-left: 40px) */
-.research-theme.theme-healthcare::before { left: -37px; border: 2px solid var(--theme-healthcare); }
-.research-theme.theme-ai-dev::before     { left: -25px; border: 2px solid var(--theme-ai-dev); }
-.research-theme.theme-human-ai::before   { left: -13px; border: 2px solid var(--theme-human-ai); }
+/* Centered on each line (padding-left: 55px) */
+.research-theme.theme-healthcare::before { left: -52px; border: 2px solid var(--theme-healthcare); }
+.research-theme.theme-ai-dev::before     { left: -40px; border: 2px solid var(--theme-ai-dev); }
+.research-theme.theme-human-ai::before   { left: -28px; border: 2px solid var(--theme-human-ai); }
 
 /* Each line starts at its own station and extends through all publications */
 .research-theme.theme-healthcare::after,
@@ -144,11 +149,11 @@ p.lead {
   width: 10px;
   height: var(--line-height, 10000px);
 }
-.research-theme.theme-healthcare::after { left: -37px; background: var(--theme-healthcare); }
-.research-theme.theme-ai-dev::after     { left: -25px; background: var(--theme-ai-dev); }
-.research-theme.theme-human-ai::after   { left: -13px; background: var(--theme-human-ai); }
+.research-theme.theme-healthcare::after { left: -52px; background: var(--theme-healthcare); }
+.research-theme.theme-ai-dev::after     { left: -40px; background: var(--theme-ai-dev); }
+.research-theme.theme-human-ai::after   { left: -28px; background: var(--theme-human-ai); }
 
-.research-theme strong { color: #8b0000; }
+.research-theme strong { color: #1a1a1a; }
 .research-theme.theme-healthcare strong { color: var(--theme-healthcare); }
 .research-theme.theme-ai-dev strong      { color: var(--theme-ai-dev); }
 .research-theme.theme-human-ai strong    { color: var(--theme-human-ai); }
@@ -161,10 +166,10 @@ p.lead {
 
 .pub-dots {
   position: absolute;
-  left: -40px;
+  left: -55px;
   top: 0;
   height: 100%;
-  width: 40px;
+  width: 55px;
   z-index: 1;
 }
 
@@ -211,14 +216,14 @@ p.lead {
 .sidenav .nav > li > a:focus {
   text-decoration: none;
   background-color: #e5e3e9;
-  border-right: 1px solid #990615;
+  border-right: 1px solid #555;
 }
 .sidenav .nav > .active > a,
 .sidenav .nav > .active:hover > a,
 .sidenav .nav > .active:focus > a {
   font-weight: bold;
   background-color: transparent;
-  border-right: 1px solid #990615;
+  border-right: 1px solid #555;
 }
 
 /* Nav: second level */
@@ -245,7 +250,7 @@ p.lead {
 
 .nav-list > .active > a,
 .nav-list > .active > a:hover {
-  background-color: #b00;
+  background-color: #1a1a1a;
 }
 
 
@@ -283,12 +288,29 @@ p.lead {
     padding-left: 0px;
 }
 
+h5, h6 {
+  font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 h5.title {
   margin-top: 0px;
 }
 
 .vital-info {
     margin-top: 1em;
+}
+
+#advising ul > span {
+  font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #555;
+  display: block;
+  margin-top: 0.5em;
 }
 
 .vital-info h5 {
@@ -309,7 +331,7 @@ h5.title {
 
 .btn-link {
     padding: 2em 0px 2em 0px;
-    color: #b00;
+    color: #555;
     font-weight: 300;
 }
 
