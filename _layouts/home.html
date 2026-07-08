@@ -247,6 +247,73 @@ layout: default
 
 <script>
 (function () {
+  /* Vignelli-style smooth bezier connector curves drawn as SVG */
+  function drawConnectors() {
+    var rs = getComputedStyle(document.documentElement);
+    var colors = {
+      'human-ai':    rs.getPropertyValue('--theme-human-ai').trim(),
+      'network-viz': rs.getPropertyValue('--theme-network-viz').trim(),
+      'ai-dev':      rs.getPropertyValue('--theme-ai-dev').trim(),
+      'healthcare':  rs.getPropertyValue('--theme-healthcare').trim()
+    };
+    var startX   = { 'human-ai': 37, 'network-viz': 37, 'ai-dev': 25, 'healthcare': 13 };
+    var ringOrder = ['human-ai', 'network-viz', 'ai-dev', 'healthcare'];
+    var svgNS    = 'http://www.w3.org/2000/svg';
+
+    document.querySelectorAll('.subway-stop').forEach(function (stop) {
+      var cd = stop.querySelector('.pub-connectors');
+      if (!cd) return;
+      var prev = cd.querySelector('svg');
+      if (prev) prev.remove();
+
+      var widths = {};
+      var defaults = { 'human-ai': 15, 'network-viz': 15, 'ai-dev': 24, 'healthcare': 33 };
+      ringOrder.forEach(function (t) {
+        var v = cd.style.getPropertyValue('--' + { 'human-ai': 'ha', 'network-viz': 'nv', 'ai-dev': 'ai', 'healthcare': 'hc' }[t] + '-w').trim();
+        widths[t] = v ? parseFloat(v) : defaults[t];
+      });
+
+      var present = ringOrder.filter(function (t) {
+        return !!cd.querySelector('.pub-connector-' + t);
+      });
+      if (!present.length) return;
+
+      // Vignelli quarter-turn: each line drops vertically from the dot then curves right to its ring.
+      // CP1 holds x constant (vertical start tangent); CP2 holds y constant (horizontal end tangent).
+      // Path starts at dotTop (hidden behind the dot) so the curve appears to flow from the station.
+      var dotTop    = 14;
+      var dotBottom = 24;
+      var dotCenterX = { 'human-ai': 32, 'network-viz': 32, 'ai-dev': 20, 'healthcare': 8 };
+      var nextY = dotBottom + 12, arrivals = {};
+      present.forEach(function (t) { arrivals[t] = nextY; nextY += 12; });
+
+      var svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.style.cssText = 'position:absolute;left:0;top:0;width:55px;height:' + (nextY + 5) + 'px;overflow:visible;z-index:0;pointer-events:none';
+
+      // Draw outermost first so innermost sits on top
+      present.slice().reverse().forEach(function (t) {
+        var x0   = dotCenterX[t];
+        var x1   = startX[t] + widths[t];   // ring outer edge
+        var yS   = dotTop;                   // start hidden behind dot; emerges at dot bottom
+        var y1   = arrivals[t];
+        var midY = (yS + y1) / 2;
+        var midX = (x0 + x1) / 2;
+        var d = 'M ' + x0 + ' ' + yS + ' C ' + x0 + ' ' + midY + ' ' + midX + ' ' + y1 + ' ' + x1 + ' ' + y1;
+        var path = document.createElementNS(svgNS, 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('stroke', colors[t]);
+        path.setAttribute('stroke-width', '10');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('stroke-linecap', 'butt');
+        svg.appendChild(path);
+      });
+
+      cd.querySelectorAll('.pub-connector').forEach(function (s) { s.style.display = 'none'; });
+      cd.appendChild(svg);
+    });
+  }
+
   function updateLineHeights() {
     var map = document.querySelector('.subway-map');
     if (!map) return;
@@ -265,7 +332,6 @@ layout: default
       themeEl.style.setProperty('--line-height', Math.max(0, height) + 'px');
     });
 
-    // Network-viz line: injected div spanning first to last pub dot center
     var nvDots = map.querySelectorAll('.pub-dot-network-viz');
     if (nvDots.length) {
       var nvLine = map.querySelector('.network-viz-line');
@@ -283,7 +349,11 @@ layout: default
       nvLine.style.height = Math.max(0, height) + 'px';
     }
   }
-  document.addEventListener('DOMContentLoaded', updateLineHeights);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    drawConnectors();
+    updateLineHeights();
+  });
   window.addEventListener('load', updateLineHeights);
   window.addEventListener('resize', updateLineHeights);
 }());
