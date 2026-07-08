@@ -62,7 +62,7 @@ layout: default
 
 
           {%- if site.publications.size > 0 -%}
-          <p style="font-size: 0.9em; color: #666; margin: 0.25em 0 0.75em;">Recent papers across these themes — <a href="https://dig.cmu.edu/publications#authors=Adam%20Perer">view all publications</a></p>
+          <p style="font-size: 0.9em; color: #666; margin: 0.25em 0 0.75em;">Selected papers across these lines — <a href="https://dig.cmu.edu/publications#authors=Adam%20Perer">view all publications</a></p>
 
           {% assign adam_pubs = site.publications | where: "authors", "Adam Perer" %}
           {% assign adam_highlight_pubs = adam_pubs | where: "highlight", "true" %}
@@ -121,6 +121,8 @@ layout: default
           </div>
           {% endfor %}
           {%- endif -%}
+
+          <div class="research-theme theme-network-viz"><strong>Improving Network Analysis with Visualization.</strong> My dissertation and early publications focused on designing visualization tools and techniques for making sense of large-scale social networks.</div>
 
           </div><!-- /subway-map -->
 
@@ -362,11 +364,19 @@ layout: default
       }
       var mapRect   = map.getBoundingClientRect();
       var firstRect = nvDots[0].getBoundingClientRect();
-      var lastRect  = nvDots[nvDots.length - 1].getBoundingClientRect();
-      var top    = firstRect.top + firstRect.height / 2 - mapRect.top;
-      var height = (lastRect.top + lastRect.height / 2 - mapRect.top) - top;
+      var top = firstRect.top + firstRect.height / 2 - mapRect.top;
+      // Extend to the bottom network-viz station if present; otherwise stop at last dot
+      var nvStation = map.querySelector('.research-theme.theme-network-viz');
+      var bottom;
+      if (nvStation) {
+        var stRect = nvStation.getBoundingClientRect();
+        bottom = stRect.top + 9 - mapRect.top;  // center of ::before dot (top:4px + height:10px/2)
+      } else {
+        var lastRect = nvDots[nvDots.length - 1].getBoundingClientRect();
+        bottom = lastRect.top + lastRect.height / 2 - mapRect.top;
+      }
       nvLine.style.top    = top + 'px';
-      nvLine.style.height = Math.max(0, height) + 'px';
+      nvLine.style.height = Math.max(0, bottom - top) + 'px';
     }
   }
 

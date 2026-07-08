@@ -135,9 +135,11 @@ p.lead {
 }
 
 /* Centered on each line (padding-left: 55px) */
-.research-theme.theme-healthcare::before { left: -52px; border: 2px solid var(--theme-healthcare); }
-.research-theme.theme-ai-dev::before     { left: -40px; border: 2px solid var(--theme-ai-dev); }
-.research-theme.theme-human-ai::before   { left: -28px; border: 2px solid var(--theme-human-ai); }
+.research-theme.theme-healthcare::before  { left: -52px; border: 2px solid var(--theme-healthcare); }
+.research-theme.theme-ai-dev::before      { left: -40px; border: 2px solid var(--theme-ai-dev); }
+.research-theme.theme-human-ai::before    { left: -28px; border: 2px solid var(--theme-human-ai); }
+.research-theme.theme-network-viz { margin-top: 2em; }
+.research-theme.theme-network-viz::before { left: -28px; border: 2px solid var(--theme-network-viz); }
 
 /* Each line starts at its own station and extends through all publications */
 .research-theme.theme-healthcare::after,
@@ -155,9 +157,10 @@ p.lead {
 .research-theme.theme-human-ai::after   { left: -28px; background: var(--theme-human-ai); }
 
 .research-theme strong { color: #1a1a1a; }
-.research-theme.theme-healthcare strong { color: var(--theme-healthcare); }
+.research-theme.theme-healthcare strong  { color: var(--theme-healthcare); }
 .research-theme.theme-ai-dev strong      { color: var(--theme-ai-dev); }
 .research-theme.theme-human-ai strong    { color: var(--theme-human-ai); }
+.research-theme.theme-network-viz strong { color: var(--theme-network-viz); }
 
 /* Publication subway stops — dots positioned in the left margin on their line */
 .subway-stop {
